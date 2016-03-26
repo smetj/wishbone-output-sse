@@ -183,7 +183,18 @@ class ServerSentEvents(Actor):
 
     def __getTemplate(self):
 
-        with open("%s/../data/sse.html" % (os.path.dirname(__file__))) as f:
-            template = ''.join(f.readlines())
-        return template
-
+        return '''
+        <html>
+            <body>
+                <div id="event"></div>
+                <script type="text/javascript">
+                    var eventOutputContainer = document.getElementById("event");
+                    var evtSrc = new EventSource("/subscribe/{{ destination }}");
+                    evtSrc.onmessage = function(e) {
+                        console.log(e.data);
+                        eventOutputContainer.innerHTML = e.data;
+                    };
+                </script>
+            </body>
+        </html>
+        '''
