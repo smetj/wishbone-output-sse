@@ -11,7 +11,7 @@
     wishbone.output.sse
     ===================
 
-    Version: 0.1.0
+    Version: 1.0.0
 
     Serve event data as server sent events.
     ---------------------------------------

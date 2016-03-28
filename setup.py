@@ -27,7 +27,7 @@ from setuptools.command.test import test as TestCommand
 import sys
 
 PROJECT = 'wishbone_output_sse'
-VERSION = '0.1.0'
+VERSION = '1.0.0'
 
 install_requires = [
     'wishbone>=2.1.1',
