@@ -115,7 +115,7 @@ class ServerSentEvents(Actor):
         self.app.add_url_rule('/subscribe/', 'subscribe', self.subscribe)
 
         p = pool.Pool(1000)
-        self.server = WSGIServer((self.kwargs.bind, self.kwargs.port), self.app, spawn=p, log=False)
+        self.server = WSGIServer((self.kwargs.bind, self.kwargs.port), self.app, spawn=p, log=None)
         self.sendToBackground(self.server.serve_forever)
         self.logging.info("Listening on http://%s:%s" % (self.kwargs.bind, self.kwargs.port))
 
