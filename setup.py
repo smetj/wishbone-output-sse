@@ -31,7 +31,7 @@ VERSION = '1.1.0'
 
 install_requires = [
     'wishbone>=2.1.1',
-    'flask==0.10.1'
+    'flask==1.0'
 ]
 
 try:
